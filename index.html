@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adın kaç yaşında?</title>
+<meta name="description" content="TÜİK verisiyle bir ismin hangi doğum yıllarında moda olduğunu gör: Fatma'dan Merve'ye, Zeynep'ten Alya'ya.">
+<meta property="og:title" content="Adın kaç yaşında?">
+<meta property="og:description" content="Bir ismin doğum yıllarına göre sırası, TÜİK Adrese Dayalı Nüfus Kayıt Sistemi.">
+<meta property="og:image" content="https://birtohum.github.io/adin-kac-yasinda/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stil.css?v=1">
+</head>
+<body>
+<main>
+  <header class="ust">
+    <p class="ust-etiket">TÜİK · doğum yılına göre isim sırası</p>
+    <h1>Adın kaç<br>yaşında?</h1>
+    <p class="giris">İsimlerin de modası geçiyor. Fatma, 1991'e kadar doğan her kuşakta birinci kız ismiydi. 1992'de yerini Merve aldı, 2000'de Zeynep. 2025 doğumlularda birinci Alya; erkeklerde Mehmet'in 2002'ye kadar süren birinciliğini bugün Alparslan taşıyor.</p>
+  </header>
+
+  <section class="dalga">
+    <div class="grafik" id="dalga"></div>
+    <p class="alt">Kız isimleri; her doğum yılında, bugün yaşayan ve o yıl doğmuş kişiler arasındaki sıra. Üst = daha yaygın.</p>
+  </section>
+
+  <section class="ara">
+    <form id="form" class="form" autocomplete="off">
+      <label><span>Bir isim yaz</span><input id="ad" list="adlar" placeholder="örneğin Elif, Mehmet, Ege" required></label>
+      <div class="cins" id="cins" role="radiogroup" aria-label="Cinsiyet">
+        <button type="button" data-c="2" class="secili" role="radio" aria-checked="true">Kız</button>
+        <button type="button" data-c="1" role="radio" aria-checked="false">Erkek</button>
+      </div>
+      <button type="submit" class="git">Göster</button>
+      <datalist id="adlar"></datalist>
+    </form>
+    <div id="sonuc" class="sonuc" aria-live="polite"></div>
+  </section>
+
+  <section class="iki">
+    <div><h2>2025'te en çok konulan kız isimleri</h2><ol class="liste" id="yeniKiz"></ol></div>
+    <div><h2>2025'te en çok konulan erkek isimleri</h2><ol class="liste" id="yeniErkek"></ol></div>
+  </section>
+
+  <footer class="dip">
+    <p><b>Veri:</b> TÜİK, Adrese Dayalı Nüfus Kayıt Sistemi. Doğum yılına göre sıralar <a href="https://tuikcocuk.tuik.gov.tr/">TÜİK Çocuk</a> sitesinin isim grafiğinden, 2018–2025 yeni doğan listeleri <a href="https://nip.tuik.gov.tr/?value=YeniDoganIsimleri">Nüfus İstatistikleri Portalı</a>'ndan alındı.</p>
+    <p><b>Sınırlar:</b> TÜİK bir isim için yalnız sırayı veriyor, kaç kişi olduğunu değil (yeni doğan listeleri hariç). Sıra, o yıl doğmuş ve bugün kayıtlı yaşayan kişiler arasında; eski yıllarda ölenler sayılmadığı için sıra bugünkü nüfusu yansıtır. TÜİK portalı tarayıcıdan doğrudan sorgulanamadığı için sayfa yalnız <span id="isimSay">…</span> ismi içeriyor: 2018–2025'te Türkiye'de ve 2025'te her ilde en çok konulan ilk 30 isim ile bugün en çok kullanılan 30 isim. Listede olmayan bir isim yazarsan sayfa bunu söyler.</p>
+    <p><a href="https://github.com/birtohum/adin-kac-yasinda">Kaynak kodu</a> · <a href="https://birtohum.github.io/">birtohum</a></p>
+  </footer>
+</main>
+<script src="uygulama.js?v=1"></script>
+</body>
+</html>

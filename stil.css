@@ -1,0 +1,65 @@
+:root {
+  --zemin: #f7f5f0; --kart: #fff; --yazi: #17181c; --soluk: #666b74; --cizgi: #e3dfd6; --vurgu: #9d174d;
+  --c1: #9d174d; --c2: #c2410c; --c3: #1d4ed8; --c4: #0f766e; --c5: #7c3aed;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zemin: #111216; --kart: #181a1f; --yazi: #eceef1; --soluk: #9ba1ab; --cizgi: #282b32; --vurgu: #f472b6;
+    --c1: #f472b6; --c2: #fb923c; --c3: #60a5fa; --c4: #2dd4bf; --c5: #a78bfa;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--zemin); color: var(--yazi); font: 16px/1.55 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 44px 20px 40px; }
+a { color: inherit; }
+.ust-etiket { margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--vurgu); }
+h1 { margin: 0 0 16px; font-size: clamp(44px, 9vw, 84px); line-height: 1; letter-spacing: -0.045em; font-weight: 800; }
+.giris { margin: 0; font-size: 18px; color: var(--soluk); max-width: 620px; }
+
+.dalga { margin-top: 26px; }
+.grafik svg { display: block; width: 100%; height: auto; overflow: visible; }
+.grafik text { font-family: inherit; font-size: 11px; fill: var(--soluk); }
+.grafik .eksen { stroke: var(--cizgi); }
+.grafik .cizgi { fill: none; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
+.grafik .ad { font-size: 13px; font-weight: 700; }
+.grafik .tepe { font-size: 12px; font-weight: 600; fill: var(--yazi); }
+.alt { margin: 8px 0 0; color: var(--soluk); font-size: 13px; }
+
+.ara { margin-top: 48px; padding: 24px; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 16px; }
+.form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.form label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; color: var(--soluk); font-weight: 500; flex: 1 1 240px; }
+.form input { font: inherit; font-size: 18px; height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--cizgi); background: var(--zemin); color: var(--yazi); }
+.cins { display: inline-flex; border: 1px solid var(--cizgi); border-radius: 10px; overflow: hidden; height: 48px; }
+.cins button { font: inherit; font-weight: 600; border: 0; background: transparent; color: var(--soluk); padding: 0 16px; cursor: pointer; }
+.cins button + button { border-left: 1px solid var(--cizgi); }
+.cins button.secili { background: var(--yazi); color: var(--zemin); }
+.git { font: inherit; font-weight: 600; height: 48px; padding: 0 22px; border-radius: 10px; border: 0; background: var(--vurgu); color: #fff; cursor: pointer; }
+input:focus-visible, button:focus-visible { outline: 2px solid var(--vurgu); outline-offset: 2px; }
+.sonuc { margin-top: 20px; }
+.sonuc .cumle { font-size: clamp(19px, 2.4vw, 24px); line-height: 1.4; margin: 0 0 14px; letter-spacing: -0.01em; }
+.sonuc .yok { color: var(--soluk); margin: 0; }
+
+.iki { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 52px; }
+h2 { margin: 0 0 10px; font-size: 19px; letter-spacing: -0.01em; }
+.liste { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.liste li { counter-increment: s; display: grid; grid-template-columns: 24px 120px 1fr 64px; gap: 8px; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--cizgi); font-size: 15px; }
+.liste li::before { content: counter(s); color: var(--soluk); font-size: 12px; }
+.liste li button { font: inherit; border: 0; background: none; color: inherit; padding: 0; text-align: left; cursor: pointer; }
+.liste li button:hover { text-decoration: underline; }
+.liste .cubuk { height: 9px; border-radius: 3px; background: var(--vurgu); opacity: .8; }
+.liste .deger { text-align: right; color: var(--soluk); font-variant-numeric: tabular-nums; font-size: 14px; }
+
+.dip { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--cizgi); font-size: 13px; color: var(--soluk); }
+.dip p { margin: 0 0 10px; max-width: 780px; }
+
+@media (max-width: 680px) {
+  main { padding: 30px 16px 30px; }
+  .giris { font-size: 16px; }
+  .ara { padding: 16px; }
+  .form .git { flex: 1; }
+  .iki { grid-template-columns: 1fr; gap: 32px; }
+  .liste li { grid-template-columns: 22px 104px 1fr 56px; }
+  .grafik text { font-size: 15px; }
+  .grafik .ad { font-size: 17px; }
+}
