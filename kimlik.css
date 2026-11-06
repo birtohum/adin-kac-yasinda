@@ -1,0 +1,10 @@
+:root{--zemin:#fff0ee;--kart:#fff;--yazi:#3a0d22;--soluk:#7c4f5f;--cizgi:#f2c9c6;--vurgu:#d81e5b}
+body{font-family:"Nunito Sans",sans-serif;background:var(--zemin)}
+h1{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(58px,11vw,128px);letter-spacing:-.03em;line-height:.92;color:var(--vurgu)}
+.ust-etiket{color:var(--yazi);letter-spacing:.12em}
+h2{font-family:Fraunces,Georgia,serif;font-weight:900}
+input{border:2px solid var(--yazi)!important;border-radius:99px!important;background:#fff!important;padding-left:20px!important}
+button{border-radius:99px!important}
+svg text{font-family:"Nunito Sans",sans-serif!important}
+h1{text-wrap:balance}
+.dip{border-top:1px solid var(--cizgi)}
