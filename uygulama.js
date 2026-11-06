@@ -1,5 +1,6 @@
 "use strict";
 const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
 const sayi = (x) => x.toLocaleString("tr-TR");
 const guzel = (s) => s.toLocaleLowerCase("tr").split(" ").map((w) => w.charAt(0).toLocaleUpperCase("tr") + w.slice(1)).join(" ");
 const buyuk = (s) => s.trim().replace(/\s+/g, " ").toLocaleUpperCase("tr");
@@ -57,7 +58,7 @@ function goster(adYaz, c) {
   const s = seri(anahtar);
   const kutu = $("sonuc");
   if (!s || !s.length) {
-    kutu.innerHTML = `<p class="yok"><b>${guzel(A)}</b> bu sayfadaki ${sayi(Object.keys(V.n).length)} isim arasında yok. TÜİK'in portalı tarayıcıdan sorgulanamadığı için sayfa yalnız en yaygın isimleri içeriyor; tam sorgu için <a href="https://tuikcocuk.tuik.gov.tr/">TÜİK Çocuk</a> sitesine bakabilirsin.</p>`;
+    kutu.innerHTML = `<p class="yok"><b>${esc(guzel(A))}</b> bu sayfadaki ${sayi(Object.keys(V.n).length)} isim arasında yok. TÜİK'in portalı tarayıcıdan sorgulanamadığı için sayfa yalnız en yaygın isimleri içeriyor; tam sorgu için <a href="https://tuikcocuk.tuik.gov.tr/">TÜİK Çocuk</a> sitesine bakabilirsin.</p>`;
     return;
   }
   const tepe = s.reduce((a, b) => (b.sira < a.sira ? b : a));
